@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tvitter ko'rinishi</title>
+<style>
+body {
+font-family: sans-serif;
+background-color: lightgray;
+margin: 0;
+}
+.page {
+background-color: white;
+width: 300px;
+padding: 20px;
+margin: 20px auto;
+border-radius: 10px;
+}
+.hidden {
+display: none;
+}
+input {
+width: 100%;
+padding: 8px;
+margin-top: 5px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+button {
+width: 100%;
+padding: 8px;
+background-color: dodgerblue;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+a {
+color: dodgerblue;
+text-decoration: none;
+font-size: 12px;
+}
+.feed {
+width: 800px;
+display: flex;
+padding: 0;
+}
+.sidebar {
+width: 180px;
+padding: 15px;
+border-right: 1px solid gray;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.sidebar a {
+color: black;
+font-size: 14px;
+font-weight: bold;
+}
+.content {
+flex: 1;
+padding: 15px;
+}
+.post {
+border-bottom: 1px solid gray;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.profile-box {
+margin-top: auto;
+border-top: 1px solid gray;
+padding-top: 10px;
+}
+</style>
+</head>
+<body>
+<div id="page1" class="page">
+<h2>Hisob yaratish</h2>
+<p>Ism</p>
+<input type="text" placeholder="Ismingiz">
+<p>Telefon raqam</p>
+<input type="text" placeholder="Telefon raqamingiz">
+<a href="#">Email ishlatish</a>
+<p>Tug'ilgan sana</p>
+<select>
+<option>Oyi</option>
+</select>
+<select>
+<option>Kuni</option>
+</select>
+<select>
+<option>Yili</option>
+</select>
+<br><br>
+<button onclick="openPage('page3')">Keyingisi</button>
+<br><br>
+<a href="#" onclick="openPage('page2')">Kirish</a>
+</div>
+<div id="page2" class="page hidden">
+<h2> kirish</h2>
+<p>Login</p>
+<input type="text" placeholder="Telefon yoki email">
+<p>Parol</p>
+<input type="password" placeholder="Parolingiz">
+<button onclick="openPage('page3')">Kirish</button>
+<br><br>
+<a href="#" onclick="openPage('page1')">Ro'yxatdan o'tish</a>
+</div>
+<div id="page3" class="page feed hidden">
+<div class="sidebar">
+<a href="#">Bosh sahifa</a>
+<a href="#">Tadqiq qilish</a>
+<a href="#">Bildirishnomalar</a>
+<a href="#">Xabarlar</a>
+<a href="#">Xatlar</a>
+<a href="#">Ro'yxatlar</a>
+<a href="#">Profil</a>
+<a href="#">Barchasi</a>
+<button onclick="alert('Joylandi!')">Tvit</button>
+<div class="profile-box">
+<b>Namoz</b>
+<p>namoz_choriyev</p>
+</div>
+</div>
+<div class="content">
+<h2>Bosh sahifa</h2>
+<input type="text" placeholder="Nimalar bo'lyapti?">
+<button onclick="alert('Joylandi!')">Tvit yuborish</button>
+<div class="post">
+<b>namoz_choriyev</b>
+<p>Yangi dizayn sizga yoqdimi?</p>
+</div>
+<div class="post">
+<b>namozphoto</b>
+<p>Osh va kabob tayyor!</p>
+</div>
+<br>
+<a href="#" onclick="openPage('page1')">Chiqish</a>
+</div>
+</div>
+<script>
+function openPage(pageId) {
+document.getElementById("page1").classList.add("hidden");
+document.getElementById("page2").classList.add("hidden");
+document.getElementById("page3").classList.add("hidden");
+document.getElementById(pageId).classList.remove("hidden");
+}
+</script>
+</body>
+</html>
